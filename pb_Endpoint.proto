@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message pb_Endpoint {
+  string local_id      = 1;
+  string domain_agent  = 2;
+  string domain        = 3;
+}

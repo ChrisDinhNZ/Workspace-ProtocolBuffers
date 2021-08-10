@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "pb_Endpoint.proto";
+
+message pb_Parcel {
+  pb_Endpoint source      = 1;  // Sender endpoint
+  pb_Endpoint destination = 2;  // Recipient endpoint
+  string type             = 3;  // Protobuf name of parcel content
+  bytes  content          = 4;  // Serialised protobuf of parcel content
+}
