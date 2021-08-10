@@ -22,13 +22,13 @@ public static partial class PbEndpointReflection {
   static PbEndpointReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "ChFwYl9FbmRwb2ludC5wcm90byJFCgtwYl9FbmRwb2ludBIQCghsb2NhbF9p",
-          "ZBgBIAEoCRIUCgxkb21haW5fYWdlbnQYAiABKAkSDgoGZG9tYWluGAMgASgJ",
-          "YgZwcm90bzM="));
+          "ChFwYl9FbmRwb2ludC5wcm90byJTCgtwYl9FbmRwb2ludBIMCgRuYW1lGAEg",
+          "ASgJEhAKCGxvY2FsX2lkGAIgASgJEhQKDGRvbWFpbl9hZ2VudBgDIAEoCRIO",
+          "CgZkb21haW4YBCABKAliBnByb3RvMw=="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::pb_Endpoint), global::pb_Endpoint.Parser, new[]{ "LocalId", "DomainAgent", "Domain" }, null, null, null, null)
+          new pbr::GeneratedClrTypeInfo(typeof(global::pb_Endpoint), global::pb_Endpoint.Parser, new[]{ "Name", "LocalId", "DomainAgent", "Domain" }, null, null, null, null)
         }));
   }
   #endregion
@@ -69,6 +69,7 @@ public sealed partial class pb_Endpoint : pb::IMessage<pb_Endpoint>
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public pb_Endpoint(pb_Endpoint other) : this() {
+    name_ = other.name_;
     localId_ = other.localId_;
     domainAgent_ = other.domainAgent_;
     domain_ = other.domain_;
@@ -81,8 +82,20 @@ public sealed partial class pb_Endpoint : pb::IMessage<pb_Endpoint>
     return new pb_Endpoint(this);
   }
 
+  /// <summary>Field number for the "name" field.</summary>
+  public const int NameFieldNumber = 1;
+  private string name_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Name {
+    get { return name_; }
+    set {
+      name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
   /// <summary>Field number for the "local_id" field.</summary>
-  public const int LocalIdFieldNumber = 1;
+  public const int LocalIdFieldNumber = 2;
   private string localId_ = "";
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -94,7 +107,7 @@ public sealed partial class pb_Endpoint : pb::IMessage<pb_Endpoint>
   }
 
   /// <summary>Field number for the "domain_agent" field.</summary>
-  public const int DomainAgentFieldNumber = 2;
+  public const int DomainAgentFieldNumber = 3;
   private string domainAgent_ = "";
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -106,7 +119,7 @@ public sealed partial class pb_Endpoint : pb::IMessage<pb_Endpoint>
   }
 
   /// <summary>Field number for the "domain" field.</summary>
-  public const int DomainFieldNumber = 3;
+  public const int DomainFieldNumber = 4;
   private string domain_ = "";
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -132,6 +145,7 @@ public sealed partial class pb_Endpoint : pb::IMessage<pb_Endpoint>
     if (ReferenceEquals(other, this)) {
       return true;
     }
+    if (Name != other.Name) return false;
     if (LocalId != other.LocalId) return false;
     if (DomainAgent != other.DomainAgent) return false;
     if (Domain != other.Domain) return false;
@@ -142,6 +156,7 @@ public sealed partial class pb_Endpoint : pb::IMessage<pb_Endpoint>
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public override int GetHashCode() {
     int hash = 1;
+    if (Name.Length != 0) hash ^= Name.GetHashCode();
     if (LocalId.Length != 0) hash ^= LocalId.GetHashCode();
     if (DomainAgent.Length != 0) hash ^= DomainAgent.GetHashCode();
     if (Domain.Length != 0) hash ^= Domain.GetHashCode();
@@ -163,16 +178,20 @@ public sealed partial class pb_Endpoint : pb::IMessage<pb_Endpoint>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     output.WriteRawMessage(this);
   #else
-    if (LocalId.Length != 0) {
+    if (Name.Length != 0) {
       output.WriteRawTag(10);
+      output.WriteString(Name);
+    }
+    if (LocalId.Length != 0) {
+      output.WriteRawTag(18);
       output.WriteString(LocalId);
     }
     if (DomainAgent.Length != 0) {
-      output.WriteRawTag(18);
+      output.WriteRawTag(26);
       output.WriteString(DomainAgent);
     }
     if (Domain.Length != 0) {
-      output.WriteRawTag(26);
+      output.WriteRawTag(34);
       output.WriteString(Domain);
     }
     if (_unknownFields != null) {
@@ -185,16 +204,20 @@ public sealed partial class pb_Endpoint : pb::IMessage<pb_Endpoint>
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (LocalId.Length != 0) {
+    if (Name.Length != 0) {
       output.WriteRawTag(10);
+      output.WriteString(Name);
+    }
+    if (LocalId.Length != 0) {
+      output.WriteRawTag(18);
       output.WriteString(LocalId);
     }
     if (DomainAgent.Length != 0) {
-      output.WriteRawTag(18);
+      output.WriteRawTag(26);
       output.WriteString(DomainAgent);
     }
     if (Domain.Length != 0) {
-      output.WriteRawTag(26);
+      output.WriteRawTag(34);
       output.WriteString(Domain);
     }
     if (_unknownFields != null) {
@@ -207,6 +230,9 @@ public sealed partial class pb_Endpoint : pb::IMessage<pb_Endpoint>
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public int CalculateSize() {
     int size = 0;
+    if (Name.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+    }
     if (LocalId.Length != 0) {
       size += 1 + pb::CodedOutputStream.ComputeStringSize(LocalId);
     }
@@ -227,6 +253,9 @@ public sealed partial class pb_Endpoint : pb::IMessage<pb_Endpoint>
   public void MergeFrom(pb_Endpoint other) {
     if (other == null) {
       return;
+    }
+    if (other.Name.Length != 0) {
+      Name = other.Name;
     }
     if (other.LocalId.Length != 0) {
       LocalId = other.LocalId;
@@ -253,14 +282,18 @@ public sealed partial class pb_Endpoint : pb::IMessage<pb_Endpoint>
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
         case 10: {
-          LocalId = input.ReadString();
+          Name = input.ReadString();
           break;
         }
         case 18: {
-          DomainAgent = input.ReadString();
+          LocalId = input.ReadString();
           break;
         }
         case 26: {
+          DomainAgent = input.ReadString();
+          break;
+        }
+        case 34: {
           Domain = input.ReadString();
           break;
         }
@@ -280,14 +313,18 @@ public sealed partial class pb_Endpoint : pb::IMessage<pb_Endpoint>
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
           break;
         case 10: {
-          LocalId = input.ReadString();
+          Name = input.ReadString();
           break;
         }
         case 18: {
-          DomainAgent = input.ReadString();
+          LocalId = input.ReadString();
           break;
         }
         case 26: {
+          DomainAgent = input.ReadString();
+          break;
+        }
+        case 34: {
           Domain = input.ReadString();
           break;
         }
