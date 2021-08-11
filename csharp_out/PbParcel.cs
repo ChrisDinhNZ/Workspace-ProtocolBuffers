@@ -25,7 +25,7 @@ public static partial class PbParcelReflection {
           "Cg9wYl9QYXJjZWwucHJvdG8aEXBiX0VuZHBvaW50LnByb3RvImsKCXBiX1Bh",
           "cmNlbBIcCgZzb3VyY2UYASABKAsyDC5wYl9FbmRwb2ludBIhCgtkZXN0aW5h",
           "dGlvbhgCIAEoCzIMLnBiX0VuZHBvaW50EgwKBHR5cGUYAyABKAkSDwoHY29u",
-          "dGVudBgEIAEoDGIGcHJvdG8z"));
+          "dGVudBgEIAEoCWIGcHJvdG8z"));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { global::PbEndpointReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -130,13 +130,13 @@ public sealed partial class pb_Parcel : pb::IMessage<pb_Parcel>
 
   /// <summary>Field number for the "content" field.</summary>
   public const int ContentFieldNumber = 4;
-  private pb::ByteString content_ = pb::ByteString.Empty;
+  private string content_ = "";
   /// <summary>
   /// Serialised protobuf of parcel content
   /// </summary>
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pb::ByteString Content {
+  public string Content {
     get { return content_; }
     set {
       content_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
@@ -205,7 +205,7 @@ public sealed partial class pb_Parcel : pb::IMessage<pb_Parcel>
     }
     if (Content.Length != 0) {
       output.WriteRawTag(34);
-      output.WriteBytes(Content);
+      output.WriteString(Content);
     }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
@@ -231,7 +231,7 @@ public sealed partial class pb_Parcel : pb::IMessage<pb_Parcel>
     }
     if (Content.Length != 0) {
       output.WriteRawTag(34);
-      output.WriteBytes(Content);
+      output.WriteString(Content);
     }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(ref output);
@@ -253,7 +253,7 @@ public sealed partial class pb_Parcel : pb::IMessage<pb_Parcel>
       size += 1 + pb::CodedOutputStream.ComputeStringSize(Type);
     }
     if (Content.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeBytesSize(Content);
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(Content);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -319,7 +319,7 @@ public sealed partial class pb_Parcel : pb::IMessage<pb_Parcel>
           break;
         }
         case 34: {
-          Content = input.ReadBytes();
+          Content = input.ReadString();
           break;
         }
       }
@@ -356,7 +356,7 @@ public sealed partial class pb_Parcel : pb::IMessage<pb_Parcel>
           break;
         }
         case 34: {
-          Content = input.ReadBytes();
+          Content = input.ReadString();
           break;
         }
       }
