@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+message pb_Response {
+
+  enum StatusCode {
+    UNKNOWN   = 0;
+    OK        = 200;
+    NOT_FOUND = 404;
+  }
+
+  StatusCode status = 1;
+  string reason     = 2;
+}
