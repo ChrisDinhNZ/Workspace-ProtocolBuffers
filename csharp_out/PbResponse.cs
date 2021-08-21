@@ -22,14 +22,16 @@ public static partial class PbResponseReflection {
   static PbResponseReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "ChFwYl9SZXNwb25zZS5wcm90byJ6CgtwYl9SZXNwb25zZRInCgZzdGF0dXMY",
-          "ASABKA4yFy5wYl9SZXNwb25zZS5TdGF0dXNDb2RlEg4KBnJlYXNvbhgCIAEo",
-          "CSIyCgpTdGF0dXNDb2RlEgsKB1VOS05PV04QABIHCgJPSxDIARIOCglOT1Rf",
-          "Rk9VTkQQlANiBnByb3RvMw=="));
+          "ChFwYl9SZXNwb25zZS5wcm90byLjAQoLcGJfUmVzcG9uc2USLAoLc3RhdHVz",
+          "X2NvZGUYASABKA4yFy5wYl9SZXNwb25zZS5TdGF0dXNDb2RlEiMKBnJlYXNv",
+          "bhgCIAEoDjITLnBiX1Jlc3BvbnNlLlJlYXNvbiIyCgpTdGF0dXNDb2RlEgsK",
+          "B1VOS05PV04QABIHCgJPSxDIARIOCglOT1RfRk9VTkQQlAMiTQoGUmVhc29u",
+          "EggKBE5PTkUQABIZChVTT1VSQ0VfTk9UX1JFR0lTVEVSRUQQARIeChpERVNU",
+          "SU5BVElPTl9OT1RfUkVHSVNURVJFRBACYgZwcm90bzM="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::pb_Response), global::pb_Response.Parser, new[]{ "Status", "Reason" }, null, new[]{ typeof(global::pb_Response.Types.StatusCode) }, null, null)
+          new pbr::GeneratedClrTypeInfo(typeof(global::pb_Response), global::pb_Response.Parser, new[]{ "StatusCode", "Reason" }, null, new[]{ typeof(global::pb_Response.Types.StatusCode), typeof(global::pb_Response.Types.Reason) }, null, null)
         }));
   }
   #endregion
@@ -70,7 +72,7 @@ public sealed partial class pb_Response : pb::IMessage<pb_Response>
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public pb_Response(pb_Response other) : this() {
-    status_ = other.status_;
+    statusCode_ = other.statusCode_;
     reason_ = other.reason_;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
@@ -81,27 +83,27 @@ public sealed partial class pb_Response : pb::IMessage<pb_Response>
     return new pb_Response(this);
   }
 
-  /// <summary>Field number for the "status" field.</summary>
-  public const int StatusFieldNumber = 1;
-  private global::pb_Response.Types.StatusCode status_ = global::pb_Response.Types.StatusCode.Unknown;
+  /// <summary>Field number for the "status_code" field.</summary>
+  public const int StatusCodeFieldNumber = 1;
+  private global::pb_Response.Types.StatusCode statusCode_ = global::pb_Response.Types.StatusCode.Unknown;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::pb_Response.Types.StatusCode Status {
-    get { return status_; }
+  public global::pb_Response.Types.StatusCode StatusCode {
+    get { return statusCode_; }
     set {
-      status_ = value;
+      statusCode_ = value;
     }
   }
 
   /// <summary>Field number for the "reason" field.</summary>
   public const int ReasonFieldNumber = 2;
-  private string reason_ = "";
+  private global::pb_Response.Types.Reason reason_ = global::pb_Response.Types.Reason.None;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string Reason {
+  public global::pb_Response.Types.Reason Reason {
     get { return reason_; }
     set {
-      reason_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      reason_ = value;
     }
   }
 
@@ -120,7 +122,7 @@ public sealed partial class pb_Response : pb::IMessage<pb_Response>
     if (ReferenceEquals(other, this)) {
       return true;
     }
-    if (Status != other.Status) return false;
+    if (StatusCode != other.StatusCode) return false;
     if (Reason != other.Reason) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
@@ -129,8 +131,8 @@ public sealed partial class pb_Response : pb::IMessage<pb_Response>
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public override int GetHashCode() {
     int hash = 1;
-    if (Status != global::pb_Response.Types.StatusCode.Unknown) hash ^= Status.GetHashCode();
-    if (Reason.Length != 0) hash ^= Reason.GetHashCode();
+    if (StatusCode != global::pb_Response.Types.StatusCode.Unknown) hash ^= StatusCode.GetHashCode();
+    if (Reason != global::pb_Response.Types.Reason.None) hash ^= Reason.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -149,13 +151,13 @@ public sealed partial class pb_Response : pb::IMessage<pb_Response>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     output.WriteRawMessage(this);
   #else
-    if (Status != global::pb_Response.Types.StatusCode.Unknown) {
+    if (StatusCode != global::pb_Response.Types.StatusCode.Unknown) {
       output.WriteRawTag(8);
-      output.WriteEnum((int) Status);
+      output.WriteEnum((int) StatusCode);
     }
-    if (Reason.Length != 0) {
-      output.WriteRawTag(18);
-      output.WriteString(Reason);
+    if (Reason != global::pb_Response.Types.Reason.None) {
+      output.WriteRawTag(16);
+      output.WriteEnum((int) Reason);
     }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
@@ -167,13 +169,13 @@ public sealed partial class pb_Response : pb::IMessage<pb_Response>
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (Status != global::pb_Response.Types.StatusCode.Unknown) {
+    if (StatusCode != global::pb_Response.Types.StatusCode.Unknown) {
       output.WriteRawTag(8);
-      output.WriteEnum((int) Status);
+      output.WriteEnum((int) StatusCode);
     }
-    if (Reason.Length != 0) {
-      output.WriteRawTag(18);
-      output.WriteString(Reason);
+    if (Reason != global::pb_Response.Types.Reason.None) {
+      output.WriteRawTag(16);
+      output.WriteEnum((int) Reason);
     }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(ref output);
@@ -185,11 +187,11 @@ public sealed partial class pb_Response : pb::IMessage<pb_Response>
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public int CalculateSize() {
     int size = 0;
-    if (Status != global::pb_Response.Types.StatusCode.Unknown) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
+    if (StatusCode != global::pb_Response.Types.StatusCode.Unknown) {
+      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) StatusCode);
     }
-    if (Reason.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(Reason);
+    if (Reason != global::pb_Response.Types.Reason.None) {
+      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -203,10 +205,10 @@ public sealed partial class pb_Response : pb::IMessage<pb_Response>
     if (other == null) {
       return;
     }
-    if (other.Status != global::pb_Response.Types.StatusCode.Unknown) {
-      Status = other.Status;
+    if (other.StatusCode != global::pb_Response.Types.StatusCode.Unknown) {
+      StatusCode = other.StatusCode;
     }
-    if (other.Reason.Length != 0) {
+    if (other.Reason != global::pb_Response.Types.Reason.None) {
       Reason = other.Reason;
     }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -225,11 +227,11 @@ public sealed partial class pb_Response : pb::IMessage<pb_Response>
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
         case 8: {
-          Status = (global::pb_Response.Types.StatusCode) input.ReadEnum();
+          StatusCode = (global::pb_Response.Types.StatusCode) input.ReadEnum();
           break;
         }
-        case 18: {
-          Reason = input.ReadString();
+        case 16: {
+          Reason = (global::pb_Response.Types.Reason) input.ReadEnum();
           break;
         }
       }
@@ -248,11 +250,11 @@ public sealed partial class pb_Response : pb::IMessage<pb_Response>
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
           break;
         case 8: {
-          Status = (global::pb_Response.Types.StatusCode) input.ReadEnum();
+          StatusCode = (global::pb_Response.Types.StatusCode) input.ReadEnum();
           break;
         }
-        case 18: {
-          Reason = input.ReadString();
+        case 16: {
+          Reason = (global::pb_Response.Types.Reason) input.ReadEnum();
           break;
         }
       }
@@ -269,6 +271,12 @@ public sealed partial class pb_Response : pb::IMessage<pb_Response>
       [pbr::OriginalName("UNKNOWN")] Unknown = 0,
       [pbr::OriginalName("OK")] Ok = 200,
       [pbr::OriginalName("NOT_FOUND")] NotFound = 404,
+    }
+
+    public enum Reason {
+      [pbr::OriginalName("NONE")] None = 0,
+      [pbr::OriginalName("SOURCE_NOT_REGISTERED")] SourceNotRegistered = 1,
+      [pbr::OriginalName("DESTINATION_NOT_REGISTERED")] DestinationNotRegistered = 2,
     }
 
   }

@@ -8,6 +8,12 @@ message pb_Response {
     NOT_FOUND = 404;
   }
 
-  StatusCode status = 1;
-  string reason     = 2;
+  enum Reason {
+    NONE                        = 0;
+    SOURCE_NOT_REGISTERED       = 1;
+    DESTINATION_NOT_REGISTERED  = 2;
+  }
+
+  StatusCode status_code = 1;
+  Reason reason     = 2;
 }
