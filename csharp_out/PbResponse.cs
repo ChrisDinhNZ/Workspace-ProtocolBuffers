@@ -22,12 +22,12 @@ public static partial class PbResponseReflection {
   static PbResponseReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "ChFwYl9SZXNwb25zZS5wcm90byLjAQoLcGJfUmVzcG9uc2USLAoLc3RhdHVz",
+          "ChFwYl9SZXNwb25zZS5wcm90byLhAQoLcGJfUmVzcG9uc2USLAoLc3RhdHVz",
           "X2NvZGUYASABKA4yFy5wYl9SZXNwb25zZS5TdGF0dXNDb2RlEiMKBnJlYXNv",
-          "bhgCIAEoDjITLnBiX1Jlc3BvbnNlLlJlYXNvbiIyCgpTdGF0dXNDb2RlEgsK",
-          "B1VOS05PV04QABIHCgJPSxDIARIOCglOT1RfRk9VTkQQlAMiTQoGUmVhc29u",
-          "EggKBE5PTkUQABIZChVTT1VSQ0VfTk9UX1JFR0lTVEVSRUQQARIeChpERVNU",
-          "SU5BVElPTl9OT1RfUkVHSVNURVJFRBACYgZwcm90bzM="));
+          "bhgCIAEoDjITLnBiX1Jlc3BvbnNlLlJlYXNvbiIwCgpTdGF0dXNDb2RlEgsK",
+          "B1VOS05PV04QABIGCgJPSxABEg0KCU5PVF9GT1VORBACIk0KBlJlYXNvbhII",
+          "CgROT05FEAASGQoVU09VUkNFX05PVF9SRUdJU1RFUkVEEAESHgoaREVTVElO",
+          "QVRJT05fTk9UX1JFR0lTVEVSRUQQAmIGcHJvdG8z"));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -269,8 +269,8 @@ public sealed partial class pb_Response : pb::IMessage<pb_Response>
   public static partial class Types {
     public enum StatusCode {
       [pbr::OriginalName("UNKNOWN")] Unknown = 0,
-      [pbr::OriginalName("OK")] Ok = 200,
-      [pbr::OriginalName("NOT_FOUND")] NotFound = 404,
+      [pbr::OriginalName("OK")] Ok = 1,
+      [pbr::OriginalName("NOT_FOUND")] NotFound = 2,
     }
 
     public enum Reason {

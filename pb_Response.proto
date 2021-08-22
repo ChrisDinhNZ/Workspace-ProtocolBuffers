@@ -4,8 +4,8 @@ message pb_Response {
 
   enum StatusCode {
     UNKNOWN   = 0;
-    OK        = 200;
-    NOT_FOUND = 404;
+    OK        = 1;
+    NOT_FOUND = 2;
   }
 
   enum Reason {
@@ -14,6 +14,6 @@ message pb_Response {
     DESTINATION_NOT_REGISTERED  = 2;
   }
 
-  StatusCode status_code = 1;
-  Reason reason     = 2;
+  StatusCode status_code  = 1;
+  Reason reason           = 2;
 }
