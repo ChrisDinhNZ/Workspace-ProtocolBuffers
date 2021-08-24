@@ -6,12 +6,16 @@ message pb_Response {
     UNKNOWN   = 0;
     OK        = 1;
     NOT_FOUND = 2;
+    BAD_REQUEST = 3;
   }
 
   enum Reason {
-    NONE                        = 0;
-    SOURCE_NOT_REGISTERED       = 1;
-    DESTINATION_NOT_REGISTERED  = 2;
+    NONE = 0;
+    SOURCE_NOT_REGISTERED = 1;
+    DESTINATION_NOT_REGISTERED = 2;
+    ENDPOINT_REGISTRATION_SUCCESS = 3;
+    ENDPOINT_REGISTRATION_FAILED_ALREADY_REGISTERED = 4;
+    ENDPOINT_REGISTRATION_FAILED_NAME_IN_USED = 5;
   }
 
   StatusCode status_code  = 1;

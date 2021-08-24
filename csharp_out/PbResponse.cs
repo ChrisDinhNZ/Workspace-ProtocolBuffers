@@ -22,12 +22,16 @@ public static partial class PbResponseReflection {
   static PbResponseReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "ChFwYl9SZXNwb25zZS5wcm90byLhAQoLcGJfUmVzcG9uc2USLAoLc3RhdHVz",
+          "ChFwYl9SZXNwb25zZS5wcm90byL6AgoLcGJfUmVzcG9uc2USLAoLc3RhdHVz",
           "X2NvZGUYASABKA4yFy5wYl9SZXNwb25zZS5TdGF0dXNDb2RlEiMKBnJlYXNv",
-          "bhgCIAEoDjITLnBiX1Jlc3BvbnNlLlJlYXNvbiIwCgpTdGF0dXNDb2RlEgsK",
-          "B1VOS05PV04QABIGCgJPSxABEg0KCU5PVF9GT1VORBACIk0KBlJlYXNvbhII",
-          "CgROT05FEAASGQoVU09VUkNFX05PVF9SRUdJU1RFUkVEEAESHgoaREVTVElO",
-          "QVRJT05fTk9UX1JFR0lTVEVSRUQQAmIGcHJvdG8z"));
+          "bhgCIAEoDjITLnBiX1Jlc3BvbnNlLlJlYXNvbiJBCgpTdGF0dXNDb2RlEgsK",
+          "B1VOS05PV04QABIGCgJPSxABEg0KCU5PVF9GT1VORBACEg8KC0JBRF9SRVFV",
+          "RVNUEAMi1AEKBlJlYXNvbhIICgROT05FEAASGQoVU09VUkNFX05PVF9SRUdJ",
+          "U1RFUkVEEAESHgoaREVTVElOQVRJT05fTk9UX1JFR0lTVEVSRUQQAhIhCh1F",
+          "TkRQT0lOVF9SRUdJU1RSQVRJT05fU1VDQ0VTUxADEjMKL0VORFBPSU5UX1JF",
+          "R0lTVFJBVElPTl9GQUlMRURfQUxSRUFEWV9SRUdJU1RFUkVEEAQSLQopRU5E",
+          "UE9JTlRfUkVHSVNUUkFUSU9OX0ZBSUxFRF9OQU1FX0lOX1VTRUQQBWIGcHJv",
+          "dG8z"));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -271,12 +275,16 @@ public sealed partial class pb_Response : pb::IMessage<pb_Response>
       [pbr::OriginalName("UNKNOWN")] Unknown = 0,
       [pbr::OriginalName("OK")] Ok = 1,
       [pbr::OriginalName("NOT_FOUND")] NotFound = 2,
+      [pbr::OriginalName("BAD_REQUEST")] BadRequest = 3,
     }
 
     public enum Reason {
       [pbr::OriginalName("NONE")] None = 0,
       [pbr::OriginalName("SOURCE_NOT_REGISTERED")] SourceNotRegistered = 1,
       [pbr::OriginalName("DESTINATION_NOT_REGISTERED")] DestinationNotRegistered = 2,
+      [pbr::OriginalName("ENDPOINT_REGISTRATION_SUCCESS")] EndpointRegistrationSuccess = 3,
+      [pbr::OriginalName("ENDPOINT_REGISTRATION_FAILED_ALREADY_REGISTERED")] EndpointRegistrationFailedAlreadyRegistered = 4,
+      [pbr::OriginalName("ENDPOINT_REGISTRATION_FAILED_NAME_IN_USED")] EndpointRegistrationFailedNameInUsed = 5,
     }
 
   }
