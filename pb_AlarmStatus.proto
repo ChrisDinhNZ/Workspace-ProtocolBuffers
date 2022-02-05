@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message pb_AlarmStatus {
+   bool alarm_active = 1;
+   string time_utc   = 2;
+   string date_utc   = 3;
+}
