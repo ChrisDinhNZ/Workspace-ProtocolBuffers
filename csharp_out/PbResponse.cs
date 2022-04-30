@@ -22,19 +22,21 @@ public static partial class PbResponseReflection {
   static PbResponseReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "ChFwYl9SZXNwb25zZS5wcm90byKPBAoLcGJfUmVzcG9uc2USLAoLc3RhdHVz",
+          "ChFwYl9SZXNwb25zZS5wcm90byLbBAoLcGJfUmVzcG9uc2USLAoLc3RhdHVz",
           "X2NvZGUYASABKA4yFy5wYl9SZXNwb25zZS5TdGF0dXNDb2RlEiMKBnJlYXNv",
-          "bhgCIAEoDjITLnBiX1Jlc3BvbnNlLlJlYXNvbiKQAQoKU3RhdHVzQ29kZRIL",
+          "bhgCIAEoDjITLnBiX1Jlc3BvbnNlLlJlYXNvbiKrAQoKU3RhdHVzQ29kZRIL",
           "CgdVTktOT1dOEAASBgoCT0sQARINCglOT1RfRk9VTkQQAhIPCgtCQURfUkVR",
           "VUVTVBADEhMKD05PVF9JTVBMRU1FTlRFRBAEEhcKE1NFUlZJQ0VfVU5BVkFJ",
-          "TEFCTEUQBRIQCgxVTkFVVEhPUklaRUQQBhINCglGT1JCSURERU4QByKZAgoG",
-          "UmVhc29uEggKBE5PTkUQABIZChVTT1VSQ0VfTk9UX1JFR0lTVEVSRUQQARIe",
-          "ChpERVNUSU5BVElPTl9OT1RfUkVHSVNURVJFRBACEiEKHUVORFBPSU5UX1JF",
-          "R0lTVFJBVElPTl9TVUNDRVNTEAMSMwovRU5EUE9JTlRfUkVHSVNUUkFUSU9O",
-          "X0ZBSUxFRF9BTFJFQURZX1JFR0lTVEVSRUQQBBItCilFTkRQT0lOVF9SRUdJ",
-          "U1RSQVRJT05fRkFJTEVEX05BTUVfSU5fVVNFRBAFEiAKHEFERFJFU1NFRF9Q",
-          "QVJUWV9BQ0tOT1dMRURHRUQQBhIhCh1BRERSRVNTRURfUEFSVFlfTk9UX0FW",
-          "QUlMQUJMRRAHYgZwcm90bzM="));
+          "TEFCTEUQBRIQCgxVTkFVVEhPUklaRUQQBhINCglGT1JCSURERU4QBxIZChVJ",
+          "TlRFUk5BTF9TRVJWRVJfRVJST1IQCCLKAgoGUmVhc29uEggKBE5PTkUQABIZ",
+          "ChVTT1VSQ0VfTk9UX1JFR0lTVEVSRUQQARIeChpERVNUSU5BVElPTl9OT1Rf",
+          "UkVHSVNURVJFRBACEiEKHUVORFBPSU5UX1JFR0lTVFJBVElPTl9TVUNDRVNT",
+          "EAMSMwovRU5EUE9JTlRfUkVHSVNUUkFUSU9OX0ZBSUxFRF9BTFJFQURZX1JF",
+          "R0lTVEVSRUQQBBItCilFTkRQT0lOVF9SRUdJU1RSQVRJT05fRkFJTEVEX05B",
+          "TUVfSU5fVVNFRBAFEiAKHEFERFJFU1NFRF9QQVJUWV9BQ0tOT1dMRURHRUQQ",
+          "BhIhCh1BRERSRVNTRURfUEFSVFlfTk9UX0FWQUlMQUJMRRAHEi8KK0VORFBP",
+          "SU5UX1JFR0lTVFJBVElPTl9GQUlMRURfSU5URVJOQUxfRVJST1IQCGIGcHJv",
+          "dG8z"));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -283,6 +285,7 @@ public sealed partial class pb_Response : pb::IMessage<pb_Response>
       [pbr::OriginalName("SERVICE_UNAVAILABLE")] ServiceUnavailable = 5,
       [pbr::OriginalName("UNAUTHORIZED")] Unauthorized = 6,
       [pbr::OriginalName("FORBIDDEN")] Forbidden = 7,
+      [pbr::OriginalName("INTERNAL_SERVER_ERROR")] InternalServerError = 8,
     }
 
     public enum Reason {
@@ -294,6 +297,7 @@ public sealed partial class pb_Response : pb::IMessage<pb_Response>
       [pbr::OriginalName("ENDPOINT_REGISTRATION_FAILED_NAME_IN_USED")] EndpointRegistrationFailedNameInUsed = 5,
       [pbr::OriginalName("ADDRESSED_PARTY_ACKNOWLEDGED")] AddressedPartyAcknowledged = 6,
       [pbr::OriginalName("ADDRESSED_PARTY_NOT_AVAILABLE")] AddressedPartyNotAvailable = 7,
+      [pbr::OriginalName("ENDPOINT_REGISTRATION_FAILED_INTERNAL_ERROR")] EndpointRegistrationFailedInternalError = 8,
     }
 
   }

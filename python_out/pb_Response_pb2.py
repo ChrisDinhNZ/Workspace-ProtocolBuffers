@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x11pb_Response.proto\"\x8f\x04\n\x0bpb_Response\x12,\n\x0bstatus_code\x18\x01 \x01(\x0e\x32\x17.pb_Response.StatusCode\x12#\n\x06reason\x18\x02 \x01(\x0e\x32\x13.pb_Response.Reason\"\x90\x01\n\nStatusCode\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x06\n\x02OK\x10\x01\x12\r\n\tNOT_FOUND\x10\x02\x12\x0f\n\x0b\x42\x41\x44_REQUEST\x10\x03\x12\x13\n\x0fNOT_IMPLEMENTED\x10\x04\x12\x17\n\x13SERVICE_UNAVAILABLE\x10\x05\x12\x10\n\x0cUNAUTHORIZED\x10\x06\x12\r\n\tFORBIDDEN\x10\x07\"\x99\x02\n\x06Reason\x12\x08\n\x04NONE\x10\x00\x12\x19\n\x15SOURCE_NOT_REGISTERED\x10\x01\x12\x1e\n\x1a\x44\x45STINATION_NOT_REGISTERED\x10\x02\x12!\n\x1d\x45NDPOINT_REGISTRATION_SUCCESS\x10\x03\x12\x33\n/ENDPOINT_REGISTRATION_FAILED_ALREADY_REGISTERED\x10\x04\x12-\n)ENDPOINT_REGISTRATION_FAILED_NAME_IN_USED\x10\x05\x12 \n\x1c\x41\x44\x44RESSED_PARTY_ACKNOWLEDGED\x10\x06\x12!\n\x1d\x41\x44\x44RESSED_PARTY_NOT_AVAILABLE\x10\x07\x62\x06proto3'
+  serialized_pb=b'\n\x11pb_Response.proto\"\xdb\x04\n\x0bpb_Response\x12,\n\x0bstatus_code\x18\x01 \x01(\x0e\x32\x17.pb_Response.StatusCode\x12#\n\x06reason\x18\x02 \x01(\x0e\x32\x13.pb_Response.Reason\"\xab\x01\n\nStatusCode\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x06\n\x02OK\x10\x01\x12\r\n\tNOT_FOUND\x10\x02\x12\x0f\n\x0b\x42\x41\x44_REQUEST\x10\x03\x12\x13\n\x0fNOT_IMPLEMENTED\x10\x04\x12\x17\n\x13SERVICE_UNAVAILABLE\x10\x05\x12\x10\n\x0cUNAUTHORIZED\x10\x06\x12\r\n\tFORBIDDEN\x10\x07\x12\x19\n\x15INTERNAL_SERVER_ERROR\x10\x08\"\xca\x02\n\x06Reason\x12\x08\n\x04NONE\x10\x00\x12\x19\n\x15SOURCE_NOT_REGISTERED\x10\x01\x12\x1e\n\x1a\x44\x45STINATION_NOT_REGISTERED\x10\x02\x12!\n\x1d\x45NDPOINT_REGISTRATION_SUCCESS\x10\x03\x12\x33\n/ENDPOINT_REGISTRATION_FAILED_ALREADY_REGISTERED\x10\x04\x12-\n)ENDPOINT_REGISTRATION_FAILED_NAME_IN_USED\x10\x05\x12 \n\x1c\x41\x44\x44RESSED_PARTY_ACKNOWLEDGED\x10\x06\x12!\n\x1d\x41\x44\x44RESSED_PARTY_NOT_AVAILABLE\x10\x07\x12/\n+ENDPOINT_REGISTRATION_FAILED_INTERNAL_ERROR\x10\x08\x62\x06proto3'
 )
 
 
@@ -71,11 +71,16 @@ _PB_RESPONSE_STATUSCODE = _descriptor.EnumDescriptor(
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='INTERNAL_SERVER_ERROR', index=8, number=8,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
   serialized_start=121,
-  serialized_end=265,
+  serialized_end=292,
 )
 _sym_db.RegisterEnumDescriptor(_PB_RESPONSE_STATUSCODE)
 
@@ -126,11 +131,16 @@ _PB_RESPONSE_REASON = _descriptor.EnumDescriptor(
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='ENDPOINT_REGISTRATION_FAILED_INTERNAL_ERROR', index=8, number=8,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=268,
-  serialized_end=549,
+  serialized_start=295,
+  serialized_end=625,
 )
 _sym_db.RegisterEnumDescriptor(_PB_RESPONSE_REASON)
 
@@ -172,7 +182,7 @@ _PB_RESPONSE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=22,
-  serialized_end=549,
+  serialized_end=625,
 )
 
 _PB_RESPONSE.fields_by_name['status_code'].enum_type = _PB_RESPONSE_STATUSCODE
