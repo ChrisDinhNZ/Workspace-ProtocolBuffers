@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x11pb_Response.proto\"\xfa\x02\n\x0bpb_Response\x12,\n\x0bstatus_code\x18\x01 \x01(\x0e\x32\x17.pb_Response.StatusCode\x12#\n\x06reason\x18\x02 \x01(\x0e\x32\x13.pb_Response.Reason\"A\n\nStatusCode\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x06\n\x02OK\x10\x01\x12\r\n\tNOT_FOUND\x10\x02\x12\x0f\n\x0b\x42\x41\x44_REQUEST\x10\x03\"\xd4\x01\n\x06Reason\x12\x08\n\x04NONE\x10\x00\x12\x19\n\x15SOURCE_NOT_REGISTERED\x10\x01\x12\x1e\n\x1a\x44\x45STINATION_NOT_REGISTERED\x10\x02\x12!\n\x1d\x45NDPOINT_REGISTRATION_SUCCESS\x10\x03\x12\x33\n/ENDPOINT_REGISTRATION_FAILED_ALREADY_REGISTERED\x10\x04\x12-\n)ENDPOINT_REGISTRATION_FAILED_NAME_IN_USED\x10\x05\x62\x06proto3'
+  serialized_pb=b'\n\x11pb_Response.proto\"\x8f\x04\n\x0bpb_Response\x12,\n\x0bstatus_code\x18\x01 \x01(\x0e\x32\x17.pb_Response.StatusCode\x12#\n\x06reason\x18\x02 \x01(\x0e\x32\x13.pb_Response.Reason\"\x90\x01\n\nStatusCode\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x06\n\x02OK\x10\x01\x12\r\n\tNOT_FOUND\x10\x02\x12\x0f\n\x0b\x42\x41\x44_REQUEST\x10\x03\x12\x13\n\x0fNOT_IMPLEMENTED\x10\x04\x12\x17\n\x13SERVICE_UNAVAILABLE\x10\x05\x12\x10\n\x0cUNAUTHORIZED\x10\x06\x12\r\n\tFORBIDDEN\x10\x07\"\x99\x02\n\x06Reason\x12\x08\n\x04NONE\x10\x00\x12\x19\n\x15SOURCE_NOT_REGISTERED\x10\x01\x12\x1e\n\x1a\x44\x45STINATION_NOT_REGISTERED\x10\x02\x12!\n\x1d\x45NDPOINT_REGISTRATION_SUCCESS\x10\x03\x12\x33\n/ENDPOINT_REGISTRATION_FAILED_ALREADY_REGISTERED\x10\x04\x12-\n)ENDPOINT_REGISTRATION_FAILED_NAME_IN_USED\x10\x05\x12 \n\x1c\x41\x44\x44RESSED_PARTY_ACKNOWLEDGED\x10\x06\x12!\n\x1d\x41\x44\x44RESSED_PARTY_NOT_AVAILABLE\x10\x07\x62\x06proto3'
 )
 
 
@@ -51,11 +51,31 @@ _PB_RESPONSE_STATUSCODE = _descriptor.EnumDescriptor(
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='NOT_IMPLEMENTED', index=4, number=4,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='SERVICE_UNAVAILABLE', index=5, number=5,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='UNAUTHORIZED', index=6, number=6,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='FORBIDDEN', index=7, number=7,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=120,
-  serialized_end=185,
+  serialized_start=121,
+  serialized_end=265,
 )
 _sym_db.RegisterEnumDescriptor(_PB_RESPONSE_STATUSCODE)
 
@@ -96,11 +116,21 @@ _PB_RESPONSE_REASON = _descriptor.EnumDescriptor(
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='ADDRESSED_PARTY_ACKNOWLEDGED', index=6, number=6,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='ADDRESSED_PARTY_NOT_AVAILABLE', index=7, number=7,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=188,
-  serialized_end=400,
+  serialized_start=268,
+  serialized_end=549,
 )
 _sym_db.RegisterEnumDescriptor(_PB_RESPONSE_REASON)
 
@@ -142,7 +172,7 @@ _PB_RESPONSE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=22,
-  serialized_end=400,
+  serialized_end=549,
 )
 
 _PB_RESPONSE.fields_by_name['status_code'].enum_type = _PB_RESPONSE_STATUSCODE

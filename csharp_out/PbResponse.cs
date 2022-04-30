@@ -22,16 +22,19 @@ public static partial class PbResponseReflection {
   static PbResponseReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "ChFwYl9SZXNwb25zZS5wcm90byL6AgoLcGJfUmVzcG9uc2USLAoLc3RhdHVz",
+          "ChFwYl9SZXNwb25zZS5wcm90byKPBAoLcGJfUmVzcG9uc2USLAoLc3RhdHVz",
           "X2NvZGUYASABKA4yFy5wYl9SZXNwb25zZS5TdGF0dXNDb2RlEiMKBnJlYXNv",
-          "bhgCIAEoDjITLnBiX1Jlc3BvbnNlLlJlYXNvbiJBCgpTdGF0dXNDb2RlEgsK",
-          "B1VOS05PV04QABIGCgJPSxABEg0KCU5PVF9GT1VORBACEg8KC0JBRF9SRVFV",
-          "RVNUEAMi1AEKBlJlYXNvbhIICgROT05FEAASGQoVU09VUkNFX05PVF9SRUdJ",
-          "U1RFUkVEEAESHgoaREVTVElOQVRJT05fTk9UX1JFR0lTVEVSRUQQAhIhCh1F",
-          "TkRQT0lOVF9SRUdJU1RSQVRJT05fU1VDQ0VTUxADEjMKL0VORFBPSU5UX1JF",
-          "R0lTVFJBVElPTl9GQUlMRURfQUxSRUFEWV9SRUdJU1RFUkVEEAQSLQopRU5E",
-          "UE9JTlRfUkVHSVNUUkFUSU9OX0ZBSUxFRF9OQU1FX0lOX1VTRUQQBWIGcHJv",
-          "dG8z"));
+          "bhgCIAEoDjITLnBiX1Jlc3BvbnNlLlJlYXNvbiKQAQoKU3RhdHVzQ29kZRIL",
+          "CgdVTktOT1dOEAASBgoCT0sQARINCglOT1RfRk9VTkQQAhIPCgtCQURfUkVR",
+          "VUVTVBADEhMKD05PVF9JTVBMRU1FTlRFRBAEEhcKE1NFUlZJQ0VfVU5BVkFJ",
+          "TEFCTEUQBRIQCgxVTkFVVEhPUklaRUQQBhINCglGT1JCSURERU4QByKZAgoG",
+          "UmVhc29uEggKBE5PTkUQABIZChVTT1VSQ0VfTk9UX1JFR0lTVEVSRUQQARIe",
+          "ChpERVNUSU5BVElPTl9OT1RfUkVHSVNURVJFRBACEiEKHUVORFBPSU5UX1JF",
+          "R0lTVFJBVElPTl9TVUNDRVNTEAMSMwovRU5EUE9JTlRfUkVHSVNUUkFUSU9O",
+          "X0ZBSUxFRF9BTFJFQURZX1JFR0lTVEVSRUQQBBItCilFTkRQT0lOVF9SRUdJ",
+          "U1RSQVRJT05fRkFJTEVEX05BTUVfSU5fVVNFRBAFEiAKHEFERFJFU1NFRF9Q",
+          "QVJUWV9BQ0tOT1dMRURHRUQQBhIhCh1BRERSRVNTRURfUEFSVFlfTk9UX0FW",
+          "QUlMQUJMRRAHYgZwcm90bzM="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -276,6 +279,10 @@ public sealed partial class pb_Response : pb::IMessage<pb_Response>
       [pbr::OriginalName("OK")] Ok = 1,
       [pbr::OriginalName("NOT_FOUND")] NotFound = 2,
       [pbr::OriginalName("BAD_REQUEST")] BadRequest = 3,
+      [pbr::OriginalName("NOT_IMPLEMENTED")] NotImplemented = 4,
+      [pbr::OriginalName("SERVICE_UNAVAILABLE")] ServiceUnavailable = 5,
+      [pbr::OriginalName("UNAUTHORIZED")] Unauthorized = 6,
+      [pbr::OriginalName("FORBIDDEN")] Forbidden = 7,
     }
 
     public enum Reason {
@@ -285,6 +292,8 @@ public sealed partial class pb_Response : pb::IMessage<pb_Response>
       [pbr::OriginalName("ENDPOINT_REGISTRATION_SUCCESS")] EndpointRegistrationSuccess = 3,
       [pbr::OriginalName("ENDPOINT_REGISTRATION_FAILED_ALREADY_REGISTERED")] EndpointRegistrationFailedAlreadyRegistered = 4,
       [pbr::OriginalName("ENDPOINT_REGISTRATION_FAILED_NAME_IN_USED")] EndpointRegistrationFailedNameInUsed = 5,
+      [pbr::OriginalName("ADDRESSED_PARTY_ACKNOWLEDGED")] AddressedPartyAcknowledged = 6,
+      [pbr::OriginalName("ADDRESSED_PARTY_NOT_AVAILABLE")] AddressedPartyNotAvailable = 7,
     }
 
   }

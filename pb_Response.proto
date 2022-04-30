@@ -7,6 +7,10 @@ message pb_Response {
     OK        = 1;
     NOT_FOUND = 2;
     BAD_REQUEST = 3;
+    NOT_IMPLEMENTED = 4;
+    SERVICE_UNAVAILABLE = 5;
+    UNAUTHORIZED = 6;
+    FORBIDDEN = 7;
   }
 
   enum Reason {
@@ -16,6 +20,8 @@ message pb_Response {
     ENDPOINT_REGISTRATION_SUCCESS = 3;
     ENDPOINT_REGISTRATION_FAILED_ALREADY_REGISTERED = 4;
     ENDPOINT_REGISTRATION_FAILED_NAME_IN_USED = 5;
+    ADDRESSED_PARTY_ACKNOWLEDGED = 6;
+    ADDRESSED_PARTY_NOT_AVAILABLE = 7;
   }
 
   StatusCode status_code  = 1;
